@@ -35,6 +35,7 @@ project.ext {
         minSdk    : jsonMinSdk,
         targetSdk : jsonTargetSdk,
         compileSdk: jsonCompileSdk,
+        compileSdkVersion : 31,
         // optional as gradle.buildTools comes with one by default
         // overriding here though to match the version RN uses
         buildTools: jsonBuildTools
@@ -56,10 +57,10 @@ apply from: file("./app-json.gradle")
 def appJSONGoogleMobileAdsAppIDString = ""
 def appJSONGoogleMobileAdsDelayAppMeasurementInitBool = false
 
-if (rootProject.ext.googleMobileAdsJson) {
-  appJSONGoogleMobileAdsAppIDString = rootProject.ext.googleMobileAdsJson.getStringValue("android_app_id", "")
-  appJSONGoogleMobileAdsDelayAppMeasurementInitBool = rootProject.ext.googleMobileAdsJson.isFlagEnabled("delay_app_measurement_init", false)
-}
+//if (rootProject.ext.googleMobileAdsJson) {
+  //appJSONGoogleMobileAdsAppIDString = rootProject.ext.googleMobileAdsJson.getStringValue("android_app_id", "")
+  //appJSONGoogleMobileAdsDelayAppMeasurementInitBool = rootProject.ext.googleMobileAdsJson.isFlagEnabled("delay_app_measurement_init", false)
+//}
 
 if (!appJSONGoogleMobileAdsAppIDString) {
   // todo throw a build error?
